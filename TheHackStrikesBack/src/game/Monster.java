@@ -17,8 +17,8 @@ public class Monster extends Creature {
 	
 	private PApplet parent;
 	
-	public Monster(PApplet parent, float x, float y, int health) {
-		super(parent, x,y, health);
+	public Monster(PApplet parent, float x, float y, int health, int WorldSize) {
+		super(parent, x,y, health,WorldSize);
 		this.parent = parent;
 		targeting = false;
 		
