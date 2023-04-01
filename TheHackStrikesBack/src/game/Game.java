@@ -39,7 +39,7 @@ public class Game extends PApplet
 			if(keyCode == LEFT) {
 				world.getRobot().moveX(-1);
 			}
-			
+			//afsjkjkfadjkfaddfskajdfaskjafdjksafkdskfdsajjk
 			if(keyCode == UP) {
 				world.getRobot().moveX(1);
 			}
