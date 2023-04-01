@@ -15,10 +15,20 @@ public class Laser extends Entity{
 		toX = parent.mouseX;
 		toY = parent.mouseY;
 		laserImage = new PImage();
+		parent.loadImage("art/laser.png");
 	}
 	
-	public void draw() {
-		parent.image()//
+	public void draw(float imageX, float imageY) {
+		parent.image(laserImage, imageX, imageY);
+	}
+
+	
+	
+	@Override
+	public void behavior() {
+		x+=(toX - x)/30;
+		y+=(toY - y)/30;
+		
 	}
 	
 	
