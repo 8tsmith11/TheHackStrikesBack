@@ -38,7 +38,7 @@ public class World
 		
 		entities = new ArrayList<Entity>();
 		p = parent;
-		player = new Robot(p, size / 2, size / 2);
+		player = new Robot(p, size / 2, size / 2, this);
 		map[size / 2 + 1][size / 2] = 0;
 		entities.add(player);
 	}
