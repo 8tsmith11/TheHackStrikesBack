@@ -21,6 +21,7 @@ public class World
 				map[r][c] = -1;
 				if(Math.random() < 0.01) {
 					map[r][c] = -2;
+					formLake(c,r);
 				}
 				else {
 					if(Math.random() < 0.03) {
@@ -75,5 +76,16 @@ public class World
 	}
 	public int getEntitiesLength() {
 		return entities.size();
+	}
+	
+	public void formLake(int startX, int startY) {
+		int lakeSize = (int) (Math.random() * 13) + 3;
+		for(int r = startY; r < startY + lakeSize; r++) {
+			for(int c = startX; c < startX + lakeSize; c++) {
+				if(r < map.length && c < map[0].length) {
+					map[r][c] = -2;
+				}
+			}
+		}
 	}
 }
