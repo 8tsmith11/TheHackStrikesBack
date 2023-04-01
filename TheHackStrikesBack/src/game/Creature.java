@@ -4,6 +4,7 @@ public abstract class Creature extends Entity {
 	
 	
 	private float damage;
+	protected String direction;
 	
 	public Creature(float x, float y) 
 	{
