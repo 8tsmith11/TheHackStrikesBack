@@ -60,11 +60,8 @@ public class Plant extends Entity {
 		
 	}
 
-	@Override
 	public void draw(float imageX, float imageY) {
 		parent.image(image, imageX,imageY);
-		// TODO Auto-generated method stub
-		
 	}
 	
 	
