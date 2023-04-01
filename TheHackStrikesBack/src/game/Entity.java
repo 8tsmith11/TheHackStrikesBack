@@ -14,6 +14,8 @@ public abstract class Entity {
 		this.y = y;
 	}
 	
+	public abstract void behavior();
+	
 	public void ChangeHealth(int change) {
 		health+= change;
 	}
@@ -29,6 +31,4 @@ public abstract class Entity {
 	public float getY() {
 		return y;
 	}
-
-
 }
