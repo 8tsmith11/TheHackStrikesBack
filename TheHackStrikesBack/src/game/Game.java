@@ -13,6 +13,9 @@ public class Game extends PApplet
 	private int rightInput;
 	private int upInput;
 	private int downInput;
+	
+	private int compost = 0;
+	private int plastic = 0;
 
 	public static void main(String[] args) 
 	{
@@ -31,13 +34,22 @@ public class Game extends PApplet
 	
 	public void draw()
 	{
+		background(0);
 		wd.drawWorld();
 		world.getRobot().moveX(leftInput + rightInput);
 		world.getRobot().moveY(downInput + upInput);
+		text("Compost: " + compost, 10, 15);
+		text("Plastic: " + plastic, 10, 30);
+		
 	}
 	
 	public void keyPressed()
 	{
+		if (leftInput + rightInput + downInput + upInput == 0)
+		{
+			world.getRobot().setMoving(false);
+		}
+		
 		if (key == 'w' || keyCode == UP)
 		{
 			world.getRobot().setMoving(true);
@@ -62,9 +74,11 @@ public class Game extends PApplet
 	
 	public void keyReleased()
 	{
-		if(key == CODED) {
+		if (leftInput + rightInput + downInput + upInput == 0)
+		{
 			world.getRobot().setMoving(false);
-			
+		}
+		
 		if (key == 'w' || keyCode == UP)
 		{
 			upInput = 0;

@@ -8,7 +8,7 @@ public class Robot extends Creature {
 	private PApplet parent;
 	
 	private int compost;
-	private int recyling;
+	private int plastic;
 	
 	private boolean moving;
 	
@@ -78,6 +78,9 @@ public class Robot extends Creature {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public int getCompost() {return compost;}
+	public int getPlastic() {return plastic;}
 	
 	
 }
