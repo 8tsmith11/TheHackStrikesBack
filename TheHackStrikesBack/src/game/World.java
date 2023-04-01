@@ -23,4 +23,24 @@ public class World
 		
 		entities = new ArrayList<Entity>();
 	}
+	
+	public double getPlayerX()
+	{
+		
+	}
+	
+	public double getPlayerY()
+	{
+		
+	}
+	
+	public int getMapWidth()
+	{
+		
+	}
+	
+	public int getMapHeight()
+	{
+		
+	}
 }

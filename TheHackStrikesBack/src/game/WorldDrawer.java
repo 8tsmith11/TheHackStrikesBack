@@ -28,4 +28,30 @@ public class WorldDrawer
 		water = parent.loadImage("images/water.png");
 		deadWater = parent.loadImage("images/deadwater.png");
 	}
+	
+	public void drawMap(double focusX, double focusY)
+	{
+		for (int x = 0; x <= width; x++)
+		{
+			for (int y = 0; y <= height; y++)
+			{
+				int tileX = x + (int)(focusX) - (width / 2);
+				int tileY = y + (int)(focusY) - (height / 2);
+				if (tileX >= 0 && tileY >= 0 && tileX < levelWidth && tileY < levelHeight)
+				{
+					float offsetX = (playerX - (int)playerX) * tileSize;
+					float offsetY = (playerY - (int)playerY) * tileSize;
+					
+					float imageX = x * tileSize - offsetX;
+					float imageY = y * tileSize - offsetY;
+							
+					int backgroundTile = scene.getBackgroundTile(tileX, tileY);
+					if (backgroundTile == 0)
+					{
+						parent.image(stoneFloor, imageX, imageY);
+					}
+				}
+			}
+		}
+	}
 }
