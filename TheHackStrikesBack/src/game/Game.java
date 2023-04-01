@@ -30,8 +30,9 @@ public class Game extends PApplet
 	}
 	
 	
-	public void keyReleased() {
+	public void keyPressed() {
 		if(key == CODED) {
+			world.getRobot().setMoving(true);
 			if (keyCode == RIGHT) {
 				world.getRobot().moveX(1);
 			}
@@ -41,11 +42,22 @@ public class Game extends PApplet
 			}
 			//afsjkjkfadjkfaddfskajdfaskjafdjksafkdskfdsajjk
 			if(keyCode == UP) {
-				world.getRobot().moveX(1);
-			}
-			if(keyCode == DOWN) {
 				world.getRobot().moveY(-1);
 			}
+			if(keyCode == DOWN) {
+				world.getRobot().moveY(1);
+			}
+			//world.getRobot().setMoving(false);
+			
+		}
+	}
+	
+	public void keyReleased() {
+		if(key == CODED) {
+			world.getRobot().setMoving(false);
+		
+	
+			//world.getRobot().setMoving(false);
 			
 		}
 	}

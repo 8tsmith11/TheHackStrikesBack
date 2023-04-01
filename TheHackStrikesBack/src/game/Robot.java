@@ -70,6 +70,9 @@ public class Robot extends Creature {
 			
 			
 		}
+		else {
+			animationIndex = 0;
+		}
 		
 		parent.image(sprites[animationIndex], imageX, imageY);
 		// TODO Auto-generated method stub
