@@ -38,7 +38,6 @@ public abstract class Creature extends Entity {
 		int yCheck = 0;
 
 		if(direction.equals("up")) {
-			System.out.println(y);
 			if(y != 0)
 				yCheck -= 1;
 		}
