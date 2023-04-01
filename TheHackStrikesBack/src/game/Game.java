@@ -30,24 +30,24 @@ public class Game extends PApplet
 	}
 	
 	
-//	public void keyReleased() {
-//		if(key == CODED) {
-//			if (keyCode == RIGHT) {
-//				world.getRobot().moveX()
-//			}
-//			
-//			else if(keyCode == LEFT) {
-//				
-//			}
-//			
-//			else if(keyCode == UP) {
-//				
-//			}
-//			else if(keyCode == DOWN) {
-//				
-//			}
-//			
-//		}
-//	}
+	public void keyReleased() {
+		if(key == CODED) {
+			if (keyCode == RIGHT) {
+				world.getRobot().moveX()
+			}
+			
+			else if(keyCode == LEFT) {
+				
+			}
+			
+			else if(keyCode == UP) {
+				
+			}
+			else if(keyCode == DOWN) {
+				
+			}
+			
+		}
+	}
 	
 }

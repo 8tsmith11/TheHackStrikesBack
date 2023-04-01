@@ -20,7 +20,11 @@ public class World
 		}
 		
 		entities = new ArrayList<Entity>();
-		player = new Robot();
+		player = new Robot(size / 2, size / 2);
+	}
+	
+	public Robot getRobot() {
+		return player;
 	}
 	
 	public int getTile(int x, int y)

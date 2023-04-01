@@ -22,6 +22,9 @@ public class WorldDrawer
 	{
 		p = parent;
 		this.world = world;
+		this.tileSize = tileSize;
+		this.width = width;
+		this.height = height;
 		
 		ground = parent.loadImage("art/ground.png");
 		deadGround = parent.loadImage("art/deadground.png");
