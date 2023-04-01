@@ -6,9 +6,9 @@ public class Robot extends Creature {
 	private int recyling;
 	
 	//test
-	public Robot(float x, float y) 
+	public Robot(float x, float y, int health ) 
 	{
-		super(x, y);
+		super(x, y,health);
 	}
 
 	@Override
