@@ -31,6 +31,7 @@ public class Game extends PApplet
 	
 	public void draw()
 	{
+		world.update();
 		background(0);
 		wd.drawWorld();
 		world.getRobot().moveX(leftInput + rightInput);
