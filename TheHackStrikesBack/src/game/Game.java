@@ -83,7 +83,7 @@ public class Game extends PApplet
 		{
 			
 			upInput = 0;
-		}
+		}//kjadfsjkfadjkfdasdfkjsl
 		else if (key == 'a' || keyCode == LEFT)
 		{
 			leftInput = 0;
