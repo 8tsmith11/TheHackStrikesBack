@@ -33,18 +33,18 @@ public class Game extends PApplet
 	public void keyReleased() {
 		if(key == CODED) {
 			if (keyCode == RIGHT) {
-				world.getRobot().moveX()
+				world.getRobot().moveX(1);
 			}
 			
-			else if(keyCode == LEFT) {
-				
+			if(keyCode == LEFT) {
+				world.getRobot().moveX(-1);
 			}
 			
-			else if(keyCode == UP) {
-				
+			if(keyCode == UP) {
+				world.getRobot().moveX(1);
 			}
-			else if(keyCode == DOWN) {
-				
+			if(keyCode == DOWN) {
+				world.getRobot().moveY(-1);
 			}
 			
 		}
