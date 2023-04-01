@@ -27,6 +27,10 @@ public class World
 		return player;
 	}
 	
+	public int[][] getMap() {
+		return map;
+	}
+	
 	public int getTile(int x, int y)
 	{
 		return map[x][y];
