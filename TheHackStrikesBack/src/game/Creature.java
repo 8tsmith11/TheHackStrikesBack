@@ -2,20 +2,20 @@ package game;
 
 public abstract class Creature extends Entity {
 	
-	
+	private int speed;
 	private float damage;
 	protected String direction;
 	
-	public Creature(float x, float y) 
+	public Creature(float x, float y, int health) 
 	{
-		super(x, y);
-	}
+		super(x, y, health);
+	}//jldsjkdsjkallasdfhjkfdkshjahdfkjfdkahjhkjfdaskadsadsdfdfdfsjkladsadsdasads
 	
 	public void moveX(float displacement) {
-		x += displacement;
+		x += displacement * speed;
 	}
 	public void moveY(float displacement) {
-		y += displacement;
+		y += displacement * speed;
 	}
 	
 	
