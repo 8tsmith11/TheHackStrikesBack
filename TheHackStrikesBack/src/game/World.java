@@ -20,6 +20,7 @@ public class World
 		}
 		
 		entities = new ArrayList<Entity>();
+		player = new Robot();
 	}
 	
 	public int getTile(int x, int y)

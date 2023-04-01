@@ -3,9 +3,9 @@ package game;
 public class Robot extends Creature {
 	
 	
-	public Robot(int positionX, int positionY) {
-		posX = positionX;
-		posY = positionY;
+	public Robot(float x, float y) 
+	{
+		super(x, y);
 	}
 	
 	public void moveUp() {
