@@ -12,7 +12,7 @@ public class Robot extends Creature {
 
 	private boolean moving;
 
-	private String direction = "up";
+
 
 	private float changeTime;
 
