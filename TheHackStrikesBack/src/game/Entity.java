@@ -2,6 +2,8 @@ package game;
 
 public abstract class Entity {
 	
+	
+	
 	protected float x;
 
 	protected float y;
