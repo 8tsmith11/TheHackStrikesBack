@@ -13,9 +13,6 @@ public class Game extends PApplet
 	private int rightInput;
 	private int upInput;
 	private int downInput;
-	
-	private int compost = 0;
-	private int plastic = 0;
 
 	public static void main(String[] args) 
 	{
