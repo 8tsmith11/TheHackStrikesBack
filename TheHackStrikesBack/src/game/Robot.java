@@ -8,7 +8,7 @@ public class Robot extends Creature {
 	private PApplet parent;
 	
 	private int compost;
-	private int recyling;
+	private int plastic;
 	
 	private boolean moving;
 	
@@ -28,7 +28,7 @@ public class Robot extends Creature {
 		
 		moving = false;
 		compost = 0; 
-		recyling = 0;
+		plastic = 0;
 		animationIndex = 0;
 		
 		sprites = new PImage[3];
@@ -75,9 +75,12 @@ public class Robot extends Creature {
 		}
 		
 		parent.image(sprites[animationIndex], imageX, imageY);
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stu
 		
 	}
+	
+	public int getCompost() {return compost;}
+	public int getPlastic() {return plastic;}
 	
 	
 }
