@@ -37,7 +37,7 @@ public class Plant extends Entity {
 			if(world.getMap()[randomX][randomY] < 0) {
 				cleanedTile = true;
 				world.getMap()[randomX][randomY] *= 1;
-			}//s
+			}
 		}
 	}
 
