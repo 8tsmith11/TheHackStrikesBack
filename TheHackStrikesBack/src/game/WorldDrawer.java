@@ -22,11 +22,20 @@ public class WorldDrawer
 	{
 		p = parent;
 		this.world = world;
+		this.tileSize = tileSize;
+		this.width = width;
+		this.height = height;
 		
 		ground = parent.loadImage("art/ground.png");
 		deadGround = parent.loadImage("art/deadground.png");
 		water = parent.loadImage("art/water.png");
 		deadWater = parent.loadImage("art/deadwater.png");
+	}
+	
+	public void drawWorld()
+	{
+		drawMap();
+		drawEntities();
 	}
 	
 	public void drawMap()
@@ -51,6 +60,24 @@ public class WorldDrawer
 						p.image(deadGround, imageX, imageY);
 					}
 				}
+			}
+		}
+	}
+	
+	public void drawEntities()
+	{
+		for(int i = 0; i < world.getEntitiesLength(); i++)
+		{
+			float x = world.getEntity(i).getX();
+			float y = world.getEntity(i).getY();
+			
+			if(Math.abs(world.getPlayerX() - x) <= width / 2 + tileSize / 2 
+					&& Math.abs(world.getPlayerY() - y) <= height / 2 + tileSize / 2)
+			{
+				float imageX = (width / 2 - world.getPlayerX() + x) * tileSize;
+				float imageY = (height / 2 - world.getPlayerY() + y) * tileSize;
+				
+				world.getEntity(i).draw(imageX, imageY);
 			}
 		}
 	}
