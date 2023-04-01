@@ -72,9 +72,9 @@ public class Monster extends Creature {
 			target = closest;
 		}
 		
-		int[] coords = pathfinder.calculatePath((int)(this.x + 0.5), (int)(this.y + 0.5), (int)(target.getY() + 0.5), (int)(target.getX() + 0.5), 1);
-		this.moveX(coords[0] - (int)(this.x + 0.5) / 10);
-		this.moveY(coords[1] - (int)(target.getY() + 0.5) / 10);
+//		int[] coords = pathfinder.calculatePath((int)(this.x + 0.5), (int)(this.y + 0.5), (int)(target.getY() + 0.5), (int)(target.getX() + 0.5), 1);
+//		this.moveX(coords[0] - (int)(this.x + 0.5) / 10);
+//		this.moveY(coords[1] - (int)(target.getY() + 0.5) / 10);
 	}
 	
 	private void setupImages() {
