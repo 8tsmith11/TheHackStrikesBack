@@ -16,19 +16,22 @@ public class World
 	public World(PApplet parent, int size)
 	{
 		map = new int[size][size];
-		for (int r = 0; r < map.length; r++)
+		for(int r = 0; r < map.length; r++)
 		{
 			for (int c = 0; c < map.length; c++)
 			{
 				map[r][c] = -1;
-				if(Math.random() < 0.01) {
-					map[r][c] = -2;
-					formLake(c,r);
+				if(Math.random() < 0.03) {
+					map[r][c] = -3;
 				}
-				else {
-					if(Math.random() < 0.03) {
-						map[r][c] = -3;
-					}
+			}
+		}
+		
+		for(int r = 0; r < map.length; r++) {
+			for(int c = 0; c < map.length; c++) {
+				if(Math.random() < 0.0001) 
+				{
+					formLake(c,r);
 				}
 			}
 		}
