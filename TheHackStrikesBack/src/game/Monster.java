@@ -1,11 +1,13 @@
 package game;
 
+import processing.core.PApplet;
+
 public class Monster extends Creature {
 	private Entity target;
 	private boolean targeting;
 	
-	public Monster(float x, float y, int health) {
-		super(x,y, health);
+	public Monster(PApplet parent, float x, float y, int health) {
+		super(parent, x,y, health);
 		targeting = false;
 	}
 	

@@ -21,16 +21,27 @@ public class Robot extends Creature {
 	//test
 	public Robot(PApplet parent,float x, float y ) 
 	{
+		
 		super(parent,x, y,100);
+		
+		this.parent = parent;
+		
 		moving = false;
 		compost = 0; 
 		recyling = 0;
 		animationIndex = 0;
 		
+		sprites = new PImage[3];
+		
+		setupImages() ;
+		
 	}
 	//akkdajakdjsdjaks
 	private void setupImages() {
 		for(int i = 0; i < sprites.length; i++) {
+			
+			
+			
 			sprites[i] = parent.loadImage("art/robot" + i + ".png");
 		}
 	}
@@ -51,7 +62,7 @@ public class Robot extends Creature {
 		if(moving) {
 			if(changeTime <= parent.millis()) {
 				animationIndex++;
-				changeTime = parent.millis() + 2000;
+				changeTime = parent.millis() + 100;
 			}
 			
 			if(animationIndex >= sprites.length)
