@@ -1,6 +1,6 @@
 package game;
 
-public class Robot extends Creature extends Entity {
+public class Robot extends Creature {
 	
 	private int posX;
 	private int posY;
