@@ -10,4 +10,12 @@ public class Robot extends Creature {
 	{
 		super(x, y);
 	}
+
+	@Override
+	public void behavior() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
 }

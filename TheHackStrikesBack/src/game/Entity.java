@@ -8,10 +8,11 @@ public abstract class Entity {
 	
 	private int health;
 	
-	public Entity(float x, float y)
+	public Entity(float x, float y, int health)
 	{
 		this.x = x;
 		this.y = y;
+		this.health = health;
 	}
 	
 	public abstract void draw(float imageX, float imageY);
@@ -32,5 +33,9 @@ public abstract class Entity {
 	
 	public float getY() {
 		return y;
+	}
+	
+	public void damage(float damage) {
+		health-= damage;
 	}
 }

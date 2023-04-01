@@ -2,7 +2,8 @@ package game;
 
 public abstract class Creature extends Entity {
 	
-	public int tilesPerSecond; 
+	
+	private float damage;
 	
 	public Creature(float x, float y) 
 	{
@@ -16,8 +17,8 @@ public abstract class Creature extends Entity {
 		y += displacement;
 	}
 	
-	public void setSpeed(int speed) {
-		tilesPerSecond = speed;
+	
+	public float getDamage() {
+		return damage;
 	}
-
 }
