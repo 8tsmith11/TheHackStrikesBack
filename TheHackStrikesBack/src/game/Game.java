@@ -98,4 +98,9 @@ public class Game extends PApplet
 			rightInput = 0;
 		}
 	}
+	
+	public void mouseClicked() {
+		
+		world.clicked();
+	}
 }

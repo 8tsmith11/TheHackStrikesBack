@@ -10,9 +10,9 @@ public class World
 	private Robot player;
 	private ArrayList<Entity> entities;
 	private PApplet p;
-	
+
 	private int seeds;
-	
+
 	public World(PApplet parent, int size)
 	{
 		map = new int[size][size];
@@ -26,7 +26,7 @@ public class World
 				}
 			}
 		}
-		
+
 		for(int r = 0; r < map.length; r++) {
 			for(int c = 0; c < map.length; c++) {
 				if(Math.random() < 0.0005) 
@@ -35,13 +35,13 @@ public class World
 				}
 			}
 		}
-		
+
 		entities = new ArrayList<Entity>();
 		p = parent;
 		player = new Robot(p, size / 2, size / 2, this);
 		map[size / 2 + 1][size / 2] = 0;
 		entities.add(player);
-		
+
 		// Starter area
 		for (int x = 0; x < 7; x++)
 		{
@@ -55,14 +55,20 @@ public class World
 		}
 		entities.add(new Plant(p, size / 2, size / 2, 1, this));
 	}
-	
+
 	public void update()
 	{
 		if (Math.random() < .005)
 		{
+<<<<<<< HEAD
 			int randX = (int) (Math.random() * map[0].length);
 			int randY = (int) (Math.random() * map.length);
 			
+=======
+			int randX = (int) Math.random() * map[0].length;
+			int randY = (int) Math.random() * map.length;
+
+>>>>>>> branch 'master' of git@github.com:8tsmith11/TheHackStrikesBack.git
 			if (map[randX][randY] < 0)
 			{
 				entities.add(new Monster(p, randX, randY, 100, this));
@@ -71,47 +77,47 @@ public class World
 			System.out.println(randX + " " + randY);
 		}
 	}
-	
+
 	public Robot getRobot() {
 		return player;
 	}
-	
+
 	public int[][] getMap() {
 		return map;
 	}
-	
+
 	public int getTile(int x, int y)
 	{
 		return map[x][y];
 	}
-	
+
 	public float getPlayerX()
 	{
 		return player.getX();
 	}
-	
+
 	public float getPlayerY()
 	{
 		return player.getY();
 	}
-	
+
 	public int getMapWidth()
 	{
 		return map[0].length;
 	}
-	
+
 	public int getMapHeight()
 	{
 		return map.length;
 	}
-	
+
 	public Entity getEntity(int index) {
 		return entities.get(index);
 	}
 	public int getEntitiesLength() {
 		return entities.size();
 	}
-	
+
 	public void formLake(int startX, int startY) {
 		int lakeSize = (int) (Math.random() * 13) + 3;
 		for(int r = startY; r < startY + lakeSize; r++) {
@@ -122,9 +128,38 @@ public class World
 			}
 		}
 	}
-	
+
 	public void addSeed() {
 		seeds++;
+	}
+
+	public void clicked() {
+		if(player.getCompost() > 0 ) {
+			
+			for(Entity e : entities) {
+
+				if(e instanceof Plant) {
+
+					float imageX = (30 / 2 - getPlayerX() + e.getX()) * 32;
+					float imageY = (20 / 2 - getPlayerY() + e.getY()) * 32;
+					
+				//	System.out.println(imageX);
+					
+				//	System.out.println("m" + p.mouseX);
+					
+					System.out.println(p.dist(imageX,imageY,p.mouseX,p.mouseY ));
+
+					if(p.dist(imageX,imageY,p.mouseX,p.mouseY ) < 30) {
+						
+						((Plant) e).upgrade();
+						player.useCompost();
+
+
+					}
+				}
+
+			}
+		}
 	}
 }
 
