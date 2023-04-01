@@ -53,7 +53,7 @@ public class Monster extends Creature {
 
 	@Override
 	public void behavior() {
-		if(targeting) {
+		if(targeting) {//jkadsjkadskjdsjk
 			target.damage(damage);
 		}
 		// TODO Auto-generated method stub
