@@ -34,7 +34,7 @@ public class Laser extends Entity{
 
 		parent.translate(imageX * -1 ,imageY * -1 );
 
-		parent.imageMode(parent.CORNER);//
+		parent.imageMode(parent.CORNER);
 	}
 
 	public boolean isDead() {

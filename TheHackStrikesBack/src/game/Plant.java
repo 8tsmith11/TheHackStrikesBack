@@ -34,9 +34,10 @@ public class Plant extends Entity {
 		while(!cleanedTile) {
 			int randomX = (int) (Math.random()*(radius * 2 + 1))+startX;
 			int randomY = (int) (Math.random()*(radius * 2 + 1))+startY;
-			if(world.getMap()[randomX][randomY] < 0)
+			if(world.getMap()[randomX][randomY] == -1) {
 				cleanedTile = true;
-				world.getMap()[randomX][randomY] *= -1;
+				world.getMap()[randomX][randomY] *= 1;
+			}
 		}
 	}
 
