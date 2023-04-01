@@ -11,6 +11,8 @@ public class World
 	private ArrayList<Entity> entities;
 	private PApplet p;
 	
+	private int seeds;
+	
 	public World(PApplet parent, int size)
 	{
 		map = new int[size][size];
@@ -87,6 +89,10 @@ public class World
 				}
 			}
 		}
+	}
+	
+	public void addSeed() {
+		seeds++;
 	}
 }
 
