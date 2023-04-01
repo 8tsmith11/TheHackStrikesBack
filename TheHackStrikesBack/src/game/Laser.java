@@ -5,15 +5,19 @@ import processing.core.PImage;
 
 public class Laser extends Entity{
 	
-	private float toX, toY;
+	private float distX, distY;
+	
+	private boolean isDead;
+	
+	private World world;
 	
 	private PImage laserImage;
 	private PApplet parent;
 	
-	public Laser(PApplet parent, float x, float y) {
+	public Laser(PApplet parent, float x, float y, World world) {
 		super(parent, x, y, 100000);
-		toX = parent.mouseX;
-		toY = parent.mouseY;
+		distX = parent.mouseX - x;
+		distY = parent.mouseY - y;
 		laserImage = new PImage();
 		parent.loadImage("art/laser.png");
 	}
@@ -22,13 +26,16 @@ public class Laser extends Entity{
 		parent.image(laserImage, imageX, imageY);
 	}
 
-	
+	public boolean isDead() {
+		return isDead;
+	}
 	
 	@Override
 	public void behavior() {
-		x+=(toX - x)/30;
-		y+=(toY - y)/30;
-		
+		if(!isDead) {
+			x+=distX/30;
+			y+=distY/30;
+		}
 	}
 	
 	
