@@ -6,9 +6,7 @@ public class World
 {
 	private int[][] map;
 	private Robot player;
-	private ArrayList<Entity> entities;
-	private int worldWidth;
-	private int worldHeight;
+	private ArrayList<Entity> entities;;
 	
 	public World(int size)
 	{
@@ -22,6 +20,7 @@ public class World
 		}
 		
 		entities = new ArrayList<Entity>();
+		player = new Robot();
 	}
 	
 	public int getTile(int x, int y)
@@ -29,23 +28,23 @@ public class World
 		return map[x][y];
 	}
 	
-	public double getPlayerX()
+	public float getPlayerX()
 	{
-		
+		return player.getX();
 	}
 	
-	public double getPlayerY()
+	public float getPlayerY()
 	{
-		
+		return player.getY();
 	}
 	
 	public int getMapWidth()
 	{
-		
+		return map[0].length;
 	}
 	
 	public int getMapHeight()
 	{
-		
+		return map.length;
 	}
 }

@@ -23,24 +23,24 @@ public class WorldDrawer
 		p = parent;
 		this.world = world;
 		
-		ground = parent.loadImage("images/ground.png");
-		deadGround = parent.loadImage("images/deadground.png");
-		water = parent.loadImage("images/water.png");
-		deadWater = parent.loadImage("images/deadwater.png");
+		ground = parent.loadImage("art/ground.png");
+		deadGround = parent.loadImage("art/deadground.png");
+		water = parent.loadImage("art/water.png");
+		deadWater = parent.loadImage("art/deadwater.png");
 	}
 	
-	public void drawMap(float focusX, float focusY)
+	public void drawMap()
 	{
 		for (int x = 0; x <= width; x++)
 		{
 			for (int y = 0; y <= height; y++)
 			{
-				int tileX = x + (int)(focusX) - (width / 2);
-				int tileY = y + (int)(focusY) - (height / 2);
+				int tileX = x + (int)(world.getPlayerX()) - (width / 2);
+				int tileY = y + (int)(world.getPlayerY()) - (height / 2);
 				if (tileX >= 0 && tileY >= 0 && tileX < world.getMapWidth() && tileY < world.getMapHeight())
 				{
-					float offsetX = (focusX - (int)focusX) * tileSize;
-					float offsetY = (focusY - (int)focusY) * tileSize;
+					float offsetX = (world.getPlayerX() - (int)world.getPlayerX()) * tileSize;
+					float offsetY = (world.getPlayerY() - (int)world.getPlayerY()) * tileSize;
 					
 					float imageX = x * tileSize - offsetX;
 					float imageY = y * tileSize - offsetY;
