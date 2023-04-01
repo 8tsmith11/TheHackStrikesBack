@@ -8,7 +8,7 @@ public class WorldDrawer
 	private PApplet p;
 	private World world;
 	private int tileSize;
-	// Width of the screen in tiles
+	//  Width of the screen in tiles
 	private int width;
 	// Height of the screen in tiles
 	private int height;
@@ -18,6 +18,8 @@ public class WorldDrawer
 	private PImage water;
 	private PImage deadWater;
 	private PImage workshop;
+	private PImage rock;
+	private PImage deadRock;
 	
 	public WorldDrawer(PApplet parent, World world, int tileSize, int width, int height)
 	{
@@ -32,6 +34,8 @@ public class WorldDrawer
 		water = parent.loadImage("art/water.png");
 		deadWater = parent.loadImage("art/deadwater.png");
 		workshop = parent.loadImage("art/workshop.png");
+		deadRock = parent.loadImage("art/deadrock.png");
+		rock = parent.loadImage("art/rock.png");
 	}
 	
 	public void drawWorld()
@@ -68,6 +72,22 @@ public class WorldDrawer
 					else if (t == -2)
 					{
 						p.image(deadWater, imageX, imageY);
+					}
+					else if (t == -3)
+					{
+						p.image(deadRock, imageX, imageY);
+					}
+					else if (t == 1)
+					{
+						p.image(ground, imageX, imageY);
+					}
+					else if (t == 2)
+					{
+						p.image(water, imageX, imageY);
+					}
+					else if (t == 3)
+					{
+						p.image(rock, imageX, imageY);
 					}
 				}
 			}
