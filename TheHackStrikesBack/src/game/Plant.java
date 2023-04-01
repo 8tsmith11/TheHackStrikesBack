@@ -18,6 +18,6 @@ public class Plant extends Entity{
 	
 	private void cleanse()
 	{
-		for (int )
+		for (int )//
 	}
 }
