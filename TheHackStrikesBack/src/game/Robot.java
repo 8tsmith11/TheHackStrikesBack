@@ -7,21 +7,4 @@ public class Robot extends Creature {
 	{
 		super(x, y);
 	}
-	
-	public void moveUp() {
-		posY++;
-	}
-	
-	public void moveDown() {
-		posY--;
-	}
-
-	public void moveRight() {
-		posX++;
-	}
-	
-	public void moveLeft() {
-		posX--;
-	}
-
 }
