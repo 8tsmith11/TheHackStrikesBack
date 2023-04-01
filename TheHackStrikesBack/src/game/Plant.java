@@ -37,9 +37,9 @@ public class Plant extends Entity {
 			if(world.getMap()[randomX][randomY] == -1) {
 				cleanedTile = true;
 				world.getMap()[randomX][randomY] *= 1;
-			}s
+			}
 		}
-	}//f
+	}
 
 	private boolean checkArea() {
 		
