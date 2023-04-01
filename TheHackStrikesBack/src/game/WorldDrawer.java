@@ -61,9 +61,13 @@ public class WorldDrawer
 					{
 						p.image(workshop, imageX, imageY);
 					}
-					if (t == -1)
+					else if (t == -1)
 					{
 						p.image(deadGround, imageX, imageY);
+					}
+					else if (t == -2)
+					{
+						p.image(deadWater, imageX, imageY)
 					}
 				}
 			}
