@@ -61,7 +61,7 @@ public class Plant extends Entity {
 	}
 
 	public void draw(float imageX, float imageY) {
-		parent.image(image, imageX,imageY);
+		parent.image(image, imageX,imageY);//
 	}
 	
 	
