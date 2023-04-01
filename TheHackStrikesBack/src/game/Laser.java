@@ -15,7 +15,7 @@ public class Laser extends Entity{
 	private PApplet parent;
 	
 	public Laser(PApplet parent, float x, float y, World world) {
-		super(parent, x, y, 100000);
+		super(parent, x, y, 100000, world);
 		distX = parent.mouseX - x;
 		distY = parent.mouseY - y;
 		laserImage = new PImage();
