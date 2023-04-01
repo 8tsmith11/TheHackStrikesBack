@@ -5,7 +5,7 @@ import processing.core.PApplet;
 public abstract class Creature extends Entity {
 	
 	private int speed;
-	private float damage;
+	protected float damage;
 	protected String direction;
 	
 	private PApplet parent;
@@ -26,4 +26,6 @@ public abstract class Creature extends Entity {
 	public float getDamage() {
 		return damage;
 	}
+	
+	
 }

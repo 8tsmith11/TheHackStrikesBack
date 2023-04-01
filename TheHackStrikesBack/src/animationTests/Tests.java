@@ -1,20 +1,21 @@
 package animationTests;
 
+import game.Monster;
 import game.Robot;
 import processing.core.PApplet;
 
-public class RobotTest extends PApplet{
+public class Tests extends PApplet{
 	
 	
 	
 	
 	private Robot bob;
-
+	private Monster kevin;
 
 	public static void main(String[] args) {
 
 		
-		PApplet.main("animationTests.RobotTest");
+		PApplet.main("animationTests.Tests");
 		
 		
 		
@@ -27,11 +28,17 @@ public class RobotTest extends PApplet{
 	
 	public void setup() {
 		bob = new Robot(this, 100.0f, 100.0f);
+		
+		kevin = new Monster(this, 100.0f, 100.0f,2000);
 	}
 	
 	public void draw() {
+		
 		background(0);
-		bob.draw(IMAGE, IMAGE);
+		
+		bob.draw(100, 100);
+		
+		kevin.draw(400, 400);
 		bob.setMoving(true);
 	}
 

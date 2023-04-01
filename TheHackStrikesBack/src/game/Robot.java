@@ -71,7 +71,7 @@ public class Robot extends Creature {
 			
 		}
 		
-		parent.image(sprites[animationIndex], x, y);
+		parent.image(sprites[animationIndex], imageX, imageY);
 		// TODO Auto-generated method stub
 		
 	}
