@@ -41,5 +41,25 @@ public class Tests extends PApplet{
 		kevin.draw(400, 400);
 		bob.setMoving(true);
 	}
+	
+	public void keyReleased() {
+		if(key == CODED) {
+			if (keyCode == RIGHT) {
+				bob.moveX(1);
+			}
+			
+			if(keyCode == LEFT) {
+				bob.moveX(-1);
+			}
+			//afsjkjkfadjkfaddfskajdfaskjafdjksafkdskfdsajjk
+			if(keyCode == UP) {
+				bob.moveX(1);
+			}
+			if(keyCode == DOWN) {
+				bob.moveY(-1);
+			}
+			
+		}
+	}
 
 }

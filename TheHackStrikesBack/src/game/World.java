@@ -55,4 +55,8 @@ public class World
 	{
 		return map.length;
 	}
+	
+	public Entity getEntity(int index) {
+		return entities.get(index);
+	}
 }
