@@ -61,7 +61,6 @@ public class World
 	{
 		if (Math.random() < .005)
 		{
-
 			int randX = (int) (Math.random() * map[0].length);
 			int randY = (int) (Math.random() * map.length);
 
@@ -116,6 +115,8 @@ public class World
 	public int getEntitiesLength() {
 		return entities.size();
 	}
+	
+	
 
 	public void formLake(int startX, int startY) {
 		int lakeSize = (int) (Math.random() * 13) + 3;
