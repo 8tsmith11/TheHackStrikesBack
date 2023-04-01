@@ -34,7 +34,7 @@ public class Robot extends Creature {
 		plastic = 0;
 
 		animationIndex = 0;
-
+//
 		sprites = new PImage[3];
 
 		setupImages() ;
