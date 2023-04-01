@@ -17,6 +17,7 @@ public class WorldDrawer
 	private PImage deadGround;
 	private PImage water;
 	private PImage deadWater;
+	private PImage workshop;
 	
 	public WorldDrawer(PApplet parent, World world, int tileSize, int width, int height)
 	{
@@ -30,6 +31,7 @@ public class WorldDrawer
 		deadGround = parent.loadImage("art/deadground.png");
 		water = parent.loadImage("art/water.png");
 		deadWater = parent.loadImage("art/deadwater.png");
+		workshop = parent.loadImage("art/workshop.png");
 	}
 	
 	public void drawWorld()
@@ -55,6 +57,10 @@ public class WorldDrawer
 					float imageY = y * tileSize - offsetY;
 							
 					int t = world.getTile(tileX, tileY);
+					if (t == 0)
+					{
+						p.image(workshop, imageX, imageY);
+					}
 					if (t == -1)
 					{
 						p.image(deadGround, imageX, imageY);

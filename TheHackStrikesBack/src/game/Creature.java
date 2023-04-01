@@ -4,8 +4,8 @@ import processing.core.PApplet;
 
 public abstract class Creature extends Entity {
 	
-	private int speed;
-	private float damage;
+	private float speed;
+	protected float damage;
 	protected String direction;
 	
 	private PApplet parent;
@@ -13,6 +13,7 @@ public abstract class Creature extends Entity {
 	public Creature(PApplet parent, float x, float y, int health) 
 	{
 		super(parent,x, y, health);
+		speed = .1f;
 	}//jldsjkdsjkallasdfhjkfdkshjahdfkjfdkahjhkjfdaskadsadsdfdfdfsjkladsadsdasads
 	
 	public void moveX(float displacement) {
@@ -26,4 +27,6 @@ public abstract class Creature extends Entity {
 	public float getDamage() {
 		return damage;
 	}
+	
+	
 }

@@ -36,7 +36,7 @@ public class Robot extends Creature {
 		setupImages() ;
 		
 	}
-	//akkdajakdjsdjaks
+	//akkdajakdjsdjaksj
 	private void setupImages() {
 		for(int i = 0; i < sprites.length; i++) {
 			
@@ -70,8 +70,11 @@ public class Robot extends Creature {
 			
 			
 		}
+		else {
+			animationIndex = 0;
+		}
 		
-		parent.image(sprites[animationIndex], x, y);
+		parent.image(sprites[animationIndex], imageX, imageY);
 		// TODO Auto-generated method stub
 		
 	}

@@ -14,6 +14,7 @@ public abstract class Entity {
 	{
 		this.x = x;
 		this.y = y;
+		
 		this.health = health;
 	}
 	
@@ -40,5 +41,7 @@ public abstract class Entity {
 	public void damage(float damage) {
 		health-= damage;
 	}
+	
+	
 	
 }
