@@ -26,5 +26,5 @@ public abstract class Creature extends Entity {
 	public float getDamage() {
 		return damage;
 	}
-
+//iusadjsakladsjlkadsakdsljajdslk
 }
