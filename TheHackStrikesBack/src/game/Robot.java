@@ -21,7 +21,7 @@ public class Robot extends Creature {
 
 	@Override
 	public void behavior() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stu
 		
 	}
 	
