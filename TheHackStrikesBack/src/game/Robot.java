@@ -36,7 +36,7 @@ public class Robot extends Creature {
 		setupImages() ;
 		
 	}
-	//akkdajakdjsdjaks
+	//akkdajakdjsdjaksj
 	private void setupImages() {
 		for(int i = 0; i < sprites.length; i++) {
 			
