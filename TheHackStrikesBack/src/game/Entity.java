@@ -15,6 +15,8 @@ public abstract class Entity {
 		this.health = health;
 	}
 	
+	public abstract void draw(float imageX, float imageY);
+	
 	public abstract void behavior();
 	
 	public void ChangeHealth(int change) {
@@ -36,4 +38,5 @@ public abstract class Entity {
 	public void damage(float damage) {
 		health-= damage;
 	}
+	
 }
