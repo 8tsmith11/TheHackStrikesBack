@@ -7,5 +7,4 @@ public class Robot extends Creature {
 	{
 		super(x, y);
 	}
-	
 }
