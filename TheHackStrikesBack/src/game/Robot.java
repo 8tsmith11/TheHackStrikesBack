@@ -21,10 +21,10 @@ public class Robot extends Creature {
 	private PImage[] sprites;
 
 	//test
-	public Robot(PApplet parent,float x, float y ) 
+	public Robot(PApplet parent,float x, float y, World world ) 
 	{
 
-		super(parent,x, y,100);
+		super(parent,x, y,100,world);
 
 		this.parent = parent;
 
@@ -34,7 +34,7 @@ public class Robot extends Creature {
 		plastic = 0;
 
 		animationIndex = 0;
-
+//
 		sprites = new PImage[3];
 
 		setupImages() ;
