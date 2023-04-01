@@ -15,7 +15,7 @@ public class Game extends PApplet
 	}
 	
 	public void setup() {
-		world = new World(1000);
+		world = new World(this, 1000);
 		wd = new WorldDrawer(this, world, tileSize, 30, 20);
 	}
 	
