@@ -35,8 +35,8 @@ public class Game extends PApplet
 		wd.drawWorld();
 		world.getRobot().moveX(leftInput + rightInput);
 		world.getRobot().moveY(downInput + upInput);
-		text("Compost: " + compost, 10, 15);
-		text("Plastic: " + plastic, 10, 30);
+		text("Compost: " + world.getRobot().getCompost(), 10, 15);
+		text("Plastic: " + world.getRobot().getPlastic(), 10, 30);
 		
 	}
 	
@@ -50,21 +50,25 @@ public class Game extends PApplet
 		if (key == 'w' || keyCode == UP)
 		{
 			world.getRobot().setMoving(true);
+			world.getRobot().setDirection("up");
 			upInput = -1;
 		}
 		else if (key == 'a' || keyCode == LEFT)
 		{
 			world.getRobot().setMoving(true);
+			world.getRobot().setDirection("left");
 			leftInput = -1;
 		}
 		else if (key == 's' || keyCode == DOWN)
 		{
 			world.getRobot().setMoving(true);
+			world.getRobot().setDirection("down");
 			downInput = 1;
 		}
 		else if (key == 'd' || keyCode == RIGHT)
 		{
 			world.getRobot().setMoving(true);
+			world.getRobot().setDirection("right");
 			rightInput = 1;
 		}
 	}
@@ -78,6 +82,7 @@ public class Game extends PApplet
 		
 		if (key == 'w' || keyCode == UP)
 		{
+			
 			upInput = 0;
 		}
 		else if (key == 'a' || keyCode == LEFT)
