@@ -5,9 +5,9 @@ public abstract class Creature extends Entity {
 	
 	private float damage;
 	
-	public Creature(float x, float y) 
+	public Creature(float x, float y, int health) 
 	{
-		super(x, y);
+		super(x, y, health);
 	}
 	
 	public void moveX(float displacement) {
