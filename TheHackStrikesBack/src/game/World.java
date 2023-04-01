@@ -25,6 +25,7 @@ public class World
 		entities = new ArrayList<Entity>();
 		p = parent;
 		player = new Robot(p, size / 2, size / 2);
+		map[size / 2 + 1][size / 2] = 0;
 	}
 	
 	public Robot getRobot() {
