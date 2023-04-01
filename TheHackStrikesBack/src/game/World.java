@@ -72,6 +72,9 @@ public class World
 
 			System.out.println(randX + " " + randY);
 		}
+		for(Entity e : entities) {
+			e.behavior();
+		}
 	}
 
 	public Robot getRobot() {
