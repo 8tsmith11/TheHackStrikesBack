@@ -29,7 +29,7 @@ public class Robot extends Creature {
 		this.parent = parent;
 
 		moving = false;
-		compost = 0; 
+		compost = 1; 
 
 		plastic = 0;
 
@@ -131,6 +131,8 @@ public class Robot extends Creature {
 	public void setDirection(String s) {
 		direction = s;
 	}
+	
+	public void useCompost() {compost--;}
 
 	public int getCompost() {return compost;}
 	public int getPlastic() {return plastic;}
