@@ -115,8 +115,6 @@ public class Robot extends Creature {
 
 		parent.rotate(PApplet.radians(rotationDegrees));
 
-
-		System.out.println(direction);
 		parent.image(sprites[animationIndex], 0, 0);
 		
 
