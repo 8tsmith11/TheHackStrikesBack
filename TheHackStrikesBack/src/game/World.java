@@ -56,6 +56,20 @@ public class World
 		entities.add(new Plant(p, size / 2, size / 2, 1, this));
 	}
 	
+	public void update()
+	{
+		if (Math.random() < .0001)
+		{
+			int randX = (int) Math.random() * map[0].length;
+			int randY = (int) Math.random() * map.length;
+			
+			if (map[randX][randY] < 0)
+			{
+				entities.add(new Monster(p, randX, randY, 100, this));
+			}
+		}
+	}
+	
 	public Robot getRobot() {
 		return player;
 	}
