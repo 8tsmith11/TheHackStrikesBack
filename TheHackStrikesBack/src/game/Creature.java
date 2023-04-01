@@ -8,7 +8,7 @@ public abstract class Creature extends Entity {
 	public Creature(float x, float y, int health) 
 	{
 		super(x, y, health);
-	}//jldsjkdsjkallkadsadsjkladsadsdasads
+	}//jldsjkdsjkallasdfhjkfdkshjahdfkjfdkahjhkjfdaskadsadsdfdfdfsjkladsadsdasads
 	
 	public void moveX(float displacement) {
 		x += displacement;
