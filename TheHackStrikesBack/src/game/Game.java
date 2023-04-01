@@ -35,6 +35,7 @@ public class Game extends PApplet
 		wd.drawWorld();
 		world.getRobot().moveX(leftInput + rightInput);
 		world.getRobot().moveY(downInput + upInput);
+<<<<<<< HEAD
 		text("Compost: " + world.getRobot().getCompost(), 10, 15);
 		text("Plastic: " + world.getRobot().getPlastic(), 10, 30);
 		
@@ -42,11 +43,18 @@ public class Game extends PApplet
 	
 	public void keyPressed()
 	{
+=======
+		text("Compost: " + compost, 10, 15);
+		text("Plastic: " + plastic, 10, 30);
+>>>>>>> branch 'master' of git@github.com:8tsmith11/TheHackStrikesBack.git
 		if (leftInput + rightInput + downInput + upInput == 0)
 		{
 			world.getRobot().setMoving(false);
 		}
-		
+	}
+	
+	public void keyPressed()
+	{	
 		if (key == 'w' || keyCode == UP)
 		{
 			world.getRobot().setMoving(true);
@@ -75,10 +83,6 @@ public class Game extends PApplet
 	
 	public void keyReleased()
 	{
-		if (leftInput + rightInput + downInput + upInput == 0)
-		{
-			world.getRobot().setMoving(false);
-		}
 		
 		if (key == 'w' || keyCode == UP)
 		{
