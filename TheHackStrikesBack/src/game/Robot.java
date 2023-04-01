@@ -5,40 +5,76 @@ import processing.core.PImage;
 
 public class Robot extends Creature {
 	
+	private PApplet parent;
+	
 	private int compost;
 	private int recyling;
 	
-	private PImage idleFrame;
-	private PImage moveFrame1;
-	private PImage moveFrame2;
+	private boolean moving;
+	
+	private float changeTime;
+	
+	private int animationIndex;
+	
+	private PImage[] sprites;
 	
 	//test
-	public Robot(float x, float y ) 
+	public Robot(PApplet parent,float x, float y ) 
 	{
-<<<<<<< HEAD
-		super(x, y);
-		ground = parent.loadImage("art/ground.png");
-=======
-		super(x, y,100);
->>>>>>> branch 'master' of git@github.com:8tsmith11/TheHackStrikesBack.git
+		
+		super(parent,x, y,100);
+		
+		this.parent = parent;
+		
+		moving = false;
+		compost = 0; 
+		recyling = 0;
+		animationIndex = 0;
+		
+		sprites = new PImage[3];
+		
+		setupImages() ;
+		
+	}
+	//akkdajakdjsdjaks
+	private void setupImages() {
+		for(int i = 0; i < sprites.length; i++) {
+			
+			
+			
+			sprites[i] = parent.loadImage("art/robot" + i + ".png");
+		}
+	}
+	
+	public void setMoving(boolean b) {
+		moving = b;
 	}
 
 	@Override
 	public void behavior() {
-		// TODO Auto-generated method stu
-	
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void draw(float imageX, float imageY) {
+		
+		if(moving) {
+			if(changeTime <= parent.millis()) {
+				animationIndex++;
+				changeTime = parent.millis() + 100;
+			}
+			
+			if(animationIndex >= sprites.length)
+				animationIndex = 0;
+			
+			
+		}
+		
+		parent.image(sprites[animationIndex], imageX, imageY);
 		// TODO Auto-generated method stub
 		
 	}
 	
-	public void draw(float imageX, float imageY)
-	{
-		
-	}
-
 	
 }

@@ -1,19 +1,20 @@
 package game;
 
+import processing.core.PApplet;
+
 public abstract class Entity {
 	
+	private PApplet parent;
 	
-	
-	protected float x;
-
-	protected float y;
+	protected float x,y;
 	
 	private int health;
 	
-	public Entity(float x, float y, int health)
+	public Entity(PApplet parent, float x, float y, int health)
 	{
 		this.x = x;
 		this.y = y;
+		
 		this.health = health;
 	}
 	

@@ -1,14 +1,18 @@
 package game;
 
+import processing.core.PApplet;
+
 public abstract class Creature extends Entity {
 	
 	private int speed;
-	private float damage;
+	protected float damage;
 	protected String direction;
 	
-	public Creature(float x, float y, int health) 
+	private PApplet parent;
+	
+	public Creature(PApplet parent, float x, float y, int health) 
 	{
-		super(x, y, health);
+		super(parent,x, y, health);
 	}//jldsjkdsjkallasdfhjkfdkshjahdfkjfdkahjhkjfdaskadsadsdfdfdfsjkladsadsdasads
 	
 	public void moveX(float displacement) {
@@ -22,4 +26,6 @@ public abstract class Creature extends Entity {
 	public float getDamage() {
 		return damage;
 	}
+	
+	
 }

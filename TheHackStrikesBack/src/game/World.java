@@ -27,6 +27,10 @@ public class World
 		return player;
 	}
 	
+	public int[][] getMap() {
+		return map;
+	}
+	
 	public int getTile(int x, int y)
 	{
 		return map[x][y];
@@ -50,5 +54,9 @@ public class World
 	public int getMapHeight()
 	{
 		return map.length;
+	}
+	
+	public Entity getEntity(int index) {
+		return entities.get(index);
 	}
 }
