@@ -18,7 +18,7 @@ public class Laser extends Entity{
 	}
 	
 	public void draw() {
-		parent.image()
+		parent.image()//
 	}
 	
 	
