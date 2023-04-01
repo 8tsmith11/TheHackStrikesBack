@@ -8,10 +8,6 @@ public abstract class Creature extends Entity {
 	{
 		super(x, y);
 	}
-
-	public Creature() {
-		// TODO Auto-generated constructor stub
-	}
 	
 	public void moveX(float displacement) {
 		x += displacement;
