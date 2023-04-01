@@ -8,6 +8,12 @@ public abstract class Entity {
 	
 	private int health;
 	
+	public Entity(float x, float y)
+	{
+		this.x = x;
+		this.y = y;
+	}
+	
 	public void ChangeHealth(int change) {
 		health+= change;
 	}
