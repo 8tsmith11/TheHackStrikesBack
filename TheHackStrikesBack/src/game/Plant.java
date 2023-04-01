@@ -1,14 +1,19 @@
 package game;
 
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class Plant extends Entity {
 
-	private int radius, speed, startX, startY;
+	private int radius, speed, startX, startY, level;
+	private PImage image;
 	private World world;
+	private PApplet parent;
 
 	public Plant(PApplet parent, float x, float y, int health, int radiusOfGrowth, int growthSpeed, World world) {
 		super(parent, x, y, health);
+		this.parent = parent;
+		upgrade();
 		radius = radiusOfGrowth;
 		speed = growthSpeed;
 		this.world = world;
@@ -46,9 +51,18 @@ public class Plant extends Entity {
 		}
 		return true;
 	}
+	
+	public void upgrade() {
+		if(level < 3)
+			level++;
+		
+		image = parent.loadImage("art/plant" + level + ".png");
+		
+	}
 
 	@Override
 	public void draw(float imageX, float imageY) {
+		parent.image(image, imageX,imageY);
 		// TODO Auto-generated method stub
 		
 	}
