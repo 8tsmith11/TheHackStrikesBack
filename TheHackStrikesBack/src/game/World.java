@@ -60,15 +60,9 @@ public class World
 	{
 		if (Math.random() < .005)
 		{
-<<<<<<< HEAD
 			int randX = (int) (Math.random() * map[0].length);
 			int randY = (int) (Math.random() * map.length);
-			
-=======
-			int randX = (int) Math.random() * map[0].length;
-			int randY = (int) Math.random() * map.length;
 
->>>>>>> branch 'master' of git@github.com:8tsmith11/TheHackStrikesBack.git
 			if (map[randX][randY] < 0)
 			{
 				entities.add(new Monster(p, randX, randY, 100, this));
@@ -117,6 +111,8 @@ public class World
 	public int getEntitiesLength() {
 		return entities.size();
 	}
+	
+	
 
 	public void formLake(int startX, int startY) {
 		int lakeSize = (int) (Math.random() * 13) + 3;
