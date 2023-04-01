@@ -5,7 +5,7 @@ import processing.core.PImage;
 
 public class Monster extends Creature {
 	
-	
+	private Pathfinder pathfinder;
 	private Entity target;
 	private boolean targeting;
 	
@@ -24,6 +24,7 @@ public class Monster extends Creature {
 		
 		sprites = new PImage[4];
 		setupImages();
+		pathfinder = new Pathfinder(world);
 	}
 	
 	public void setTarget(Creature target) {
@@ -63,13 +64,17 @@ public class Monster extends Creature {
 			for (int i = 1; i < world.getEntitiesLength(); i++)
 			{
 				
-				if (Math.hypot(world.getEntity(i).getX() - this.getX(), world.getEntity(i).getY() - this.getY()) > Math.hypot(closest.getX() - this.getX(), closest.getY() - this.getY()))
+				if (Math.hypot(world.getEntity(i).getX() - this.getX(), world.getEntity(i).getY() - this.getY()) > Math.hypot(closest.getX() - this.getX(), closest.getY() - this.getY()) && !(target instanceof Monster))
 				{
 					closest = world.getEntity(i);
 				}
 			}
 			target = closest;
 		}
+		
+//		int[] coords = pathfinder.calculatePath((int)(this.x + 0.5), (int)(this.y + 0.5), (int)(target.getY() + 0.5), (int)(target.getX() + 0.5), 1);
+//		this.moveX(coords[0] - (int)(this.x + 0.5) / 10);
+//		this.moveY(coords[1] - (int)(target.getY() + 0.5) / 10);
 	}
 	
 	private void setupImages() {
