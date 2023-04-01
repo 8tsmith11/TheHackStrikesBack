@@ -22,6 +22,9 @@ public class WorldDrawer
 	{
 		p = parent;
 		this.world = world;
+		this.tileSize = tileSize;
+		this.width = width;
+		this.height = height;
 		
 		ground = parent.loadImage("art/ground.png");
 		deadGround = parent.loadImage("art/deadground.png");
@@ -44,8 +47,6 @@ public class WorldDrawer
 					
 					float imageX = x * tileSize - offsetX;
 					float imageY = y * tileSize - offsetY;
-					System.out.println(imageX);
-					System.out.println(imageX);
 							
 					int t = world.getTile(tileX, tileY);
 					if (t == -1)
