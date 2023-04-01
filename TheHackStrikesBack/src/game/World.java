@@ -58,15 +58,17 @@ public class World
 	
 	public void update()
 	{
-		if (Math.random() < .0001)
+		if (Math.random() < .005)
 		{
-			int randX = (int) Math.random() * map[0].length;
-			int randY = (int) Math.random() * map.length;
+			int randX = (int) (Math.random() * map[0].length);
+			int randY = (int) (Math.random() * map.length);
 			
 			if (map[randX][randY] < 0)
 			{
 				entities.add(new Monster(p, randX, randY, 100, this));
 			}
+			
+			System.out.println(randX + " " + randY);
 		}
 	}
 	

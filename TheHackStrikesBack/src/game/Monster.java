@@ -56,8 +56,20 @@ public class Monster extends Creature {
 		if(targeting) {//jkadsjkadskjdsjk
 			target.damage(damage);
 		}
-		// TODO Auto-generated method stub
 		
+		if (!targeting)
+		{
+			Entity closest = world.getRobot();
+			for (int i = 1; i < world.getEntitiesLength(); i++)
+			{
+				
+				if (Math.hypot(world.getEntity(i).getX() - this.getX(), world.getEntity(i).getY() - this.getY()) > Math.hypot(closest.getX() - this.getX(), closest.getY() - this.getY()))
+				{
+					closest = world.getEntity(i);
+				}
+			}
+			target = closest;
+		}
 	}
 	
 	private void setupImages() {
