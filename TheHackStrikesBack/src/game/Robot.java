@@ -28,7 +28,7 @@ public class Robot extends Creature {
 		
 		moving = false;
 		compost = 0; 
-		recyling = 0;
+		plastic = 0;
 		animationIndex = 0;
 		
 		sprites = new PImage[3];
