@@ -1,5 +1,6 @@
 package game;
 
-public class World {
-
+public class World 
+{
+	private int[][] map;
 }
