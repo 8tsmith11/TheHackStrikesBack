@@ -75,7 +75,7 @@ public class WorldDrawer
 					}
 					else if (t == -3)
 					{
-						p.image(deadRock, imageX, Y);
+						p.image(deadRock, imageX, imageY);
 					}
 					else if (t == 1)
 					{
@@ -87,7 +87,7 @@ public class WorldDrawer
 					}
 					else if (t == 3)
 					{
-						p.image(rock, imageX, Y);
+						p.image(rock, imageX, imageY);
 					}
 				}
 			}
