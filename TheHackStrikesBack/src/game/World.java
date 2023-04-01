@@ -64,4 +64,7 @@ public class World
 	public Entity getEntity(int index) {
 		return entities.get(index);
 	}
+	public int getEntitiesLength() {
+		return entities.size();
+	}
 }
