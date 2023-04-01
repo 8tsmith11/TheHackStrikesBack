@@ -37,6 +37,7 @@ public class World
 		}
 
 		entities = new ArrayList<Entity>();
+		entities.add(new Monster(parent, 505, 500, 100, this));
 		p = parent;
 		player = new Robot(p, size / 2, size / 2, this);
 		map[size / 2 + 1][size / 2] = 0;
@@ -60,20 +61,15 @@ public class World
 	{
 		if (Math.random() < .005)
 		{
-<<<<<<< HEAD
+
 			int randX = (int) (Math.random() * map[0].length);
 			int randY = (int) (Math.random() * map.length);
-			
-=======
-			int randX = (int) Math.random() * map[0].length;
-			int randY = (int) Math.random() * map.length;
 
->>>>>>> branch 'master' of git@github.com:8tsmith11/TheHackStrikesBack.git
 			if (map[randX][randY] < 0)
 			{
 				entities.add(new Monster(p, randX, randY, 100, this));
 			}
-			
+
 			System.out.println(randX + " " + randY);
 		}
 	}
@@ -135,24 +131,46 @@ public class World
 
 	public void clicked() {
 		if(player.getCompost() > 0 ) {
-			
-			for(Entity e : entities) {
 
-				if(e instanceof Plant) {
+			for(int i = 0 ; i < entities.size(); i++) {
 
-					float imageX = (30 / 2 - getPlayerX() + e.getX()) * 32;
-					float imageY = (20 / 2 - getPlayerY() + e.getY()) * 32;
-					
-				//	System.out.println(imageX);
-					
-				//	System.out.println("m" + p.mouseX);
-					
-					System.out.println(p.dist(imageX,imageY,p.mouseX,p.mouseY ));
+				if(entities.get(i) instanceof Plant || entities.get(i) instanceof Monster) {
+
+					float imageX = (30 / 2 - getPlayerX() + entities.get(i).getX()) * 32;
+					float imageY = (20 / 2 - getPlayerY() + entities.get(i).getY()) * 32;
+
+					//	System.out.println(imageX);
+
+					//	System.out.println("m" + p.mouseX);
 
 					if(p.dist(imageX,imageY,p.mouseX,p.mouseY ) < 30) {
+
+						if(entities.get(i) instanceof Plant) {
+							((Plant) entities.get(i)).upgrade();
+							player.useCompost();
+						}
 						
-						((Plant) e).upgrade();
-						player.useCompost();
+						else {
+
+							System.out.println(p.dist(imageX,imageY,p.mouseX,p.mouseY ));
+							
+							float monsterX = (30 / 2 - getPlayerX() + entities.get(i).getX()) * 32;
+							float monsterY = (20 / 2 - getPlayerY() + entities.get(i).getY()) * 32;
+							
+							p.stroke(245, 78, 66);
+							p.line(imageX, imageY, monsterX, monsterY);
+							p.stroke(255);
+							
+							entities.get(i).damage(20);
+							System.out.println("damgaing");
+							if(entities.get(i).getHealth()<= 0) {
+								
+								player.addCompost();
+								entities.remove(i);
+								i--;
+							}
+							
+							}
 
 
 					}
