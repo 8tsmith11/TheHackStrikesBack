@@ -23,7 +23,18 @@ public class Laser extends Entity{
 	}
 	
 	public void draw(float imageX, float imageY) {
+		parent.imageMode(parent.CENTER);
+		parent.translate(imageX,imageY);
+
+		parent.rotate((float) Math.atan(distY/distX));
+
 		parent.image(laserImage, imageX, imageY);
+		
+		parent.rotate((float) Math.atan(distY/distX));
+
+		parent.translate(imageX * -1 ,imageY * -1 );
+
+		parent.imageMode(parent.CORNER);
 	}
 
 	public boolean isDead() {
