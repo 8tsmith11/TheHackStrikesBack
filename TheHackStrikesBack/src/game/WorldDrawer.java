@@ -8,7 +8,7 @@ public class WorldDrawer
 	private PApplet p;
 	private World world;
 	private int tileSize;
-	// Width of the screen in tiles
+	//  Width of the screen in tiles
 	private int width;
 	// Height of the screen in tiles
 	private int height;
