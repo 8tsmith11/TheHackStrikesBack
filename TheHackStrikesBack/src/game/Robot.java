@@ -24,7 +24,7 @@ public class Robot extends Creature {
 		animationIndex = 0;
 		
 	}
-	
+	//akkdajakdjsdjaks
 	private void setupImages() {
 		for(int i = 0; i < sprites.length; i++) {
 			sprites[i] = parent.loadImage("art/robot" + i + ".png");
