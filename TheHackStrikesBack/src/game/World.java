@@ -24,6 +24,11 @@ public class World
 		entities = new ArrayList<Entity>();
 	}
 	
+	public int getTile(int x, int y)
+	{
+		return map[x][y];
+	}
+	
 	public double getPlayerX()
 	{
 		

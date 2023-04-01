@@ -29,7 +29,7 @@ public class WorldDrawer
 		deadWater = parent.loadImage("images/deadwater.png");
 	}
 	
-	public void drawMap(double focusX, double focusY)
+	public void drawMap(float focusX, float focusY)
 	{
 		for (int x = 0; x <= width; x++)
 		{
@@ -37,18 +37,18 @@ public class WorldDrawer
 			{
 				int tileX = x + (int)(focusX) - (width / 2);
 				int tileY = y + (int)(focusY) - (height / 2);
-				if (tileX >= 0 && tileY >= 0 && tileX < levelWidth && tileY < levelHeight)
+				if (tileX >= 0 && tileY >= 0 && tileX < world.getMapWidth() && tileY < world.getMapHeight())
 				{
-					float offsetX = (playerX - (int)playerX) * tileSize;
-					float offsetY = (playerY - (int)playerY) * tileSize;
+					float offsetX = (focusX - (int)focusX) * tileSize;
+					float offsetY = (focusY - (int)focusY) * tileSize;
 					
 					float imageX = x * tileSize - offsetX;
 					float imageY = y * tileSize - offsetY;
 							
-					int backgroundTile = scene.getBackgroundTile(tileX, tileY);
-					if (backgroundTile == 0)
+					int t = world.getTile(tileX, tileY);
+					if (t == -1)
 					{
-						parent.image(stoneFloor, imageX, imageY);
+						p.image(deadGround, imageX, imageY);
 					}
 				}
 			}
