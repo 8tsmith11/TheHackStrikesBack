@@ -38,4 +38,5 @@ public abstract class Entity {
 	public void damage(float damage) {
 		health-= damage;
 	}
+	
 }
