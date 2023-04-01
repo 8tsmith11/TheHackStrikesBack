@@ -1,6 +1,7 @@
 package animationTests;
 
 import game.Monster;
+import game.Plant;
 import game.Robot;
 import processing.core.PApplet;
 
@@ -11,6 +12,7 @@ public class Tests extends PApplet{
 	
 	private Robot bob;
 	private Monster kevin;
+	private Plant Monkey;
 
 	public static void main(String[] args) {
 
@@ -30,6 +32,7 @@ public class Tests extends PApplet{
 		bob = new Robot(this, 100.0f, 100.0f);
 		
 		kevin = new Monster(this, 100.0f, 100.0f,2000);
+		Monkey = new Plant(this, 200f,300f,100000, display, display, null);
 	}
 	
 	public void draw() {

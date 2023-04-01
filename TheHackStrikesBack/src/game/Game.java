@@ -47,7 +47,7 @@ public class Game extends PApplet
 			if(keyCode == DOWN) {
 				world.getRobot().moveY(1);
 			}
-			//world.getRobot().setMoving(false);
+			//world.getRobot().setMoving(false); s
 			
 		}
 	}
@@ -61,5 +61,6 @@ public class Game extends PApplet
 			
 		}
 	}
+	
 	
 }
