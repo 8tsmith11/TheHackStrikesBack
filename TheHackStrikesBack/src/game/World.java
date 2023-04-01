@@ -38,9 +38,22 @@ public class World
 		
 		entities = new ArrayList<Entity>();
 		p = parent;
-		player = new Robot(p, size / 2, size / 2);
+		player = new Robot(p, size / 2, size / 2, this);
 		map[size / 2 + 1][size / 2] = 0;
 		entities.add(player);
+		
+		// Starter area
+		for (int x = 0; x < 7; x++)
+		{
+			for (int y = 0; y < 7; y++)
+			{
+				if (map[x + size / 2 - 3][y + size / 2 - 3] != 0)
+				{
+					map[x + size / 2 - 3][y + size / 2 - 3] = 1;
+				}
+			}
+		}
+		entities.add(new Plant(p, size / 2, size / 2, 1, this));
 	}
 	
 	public Robot getRobot() {
@@ -99,4 +112,4 @@ public class World
 	}
 }
 
-//commentcommentcommenasdkljdaskldasjkladsjkldasklkldst
+//commentcommentcommenasdkljdaskldasjkladsjklsklk
