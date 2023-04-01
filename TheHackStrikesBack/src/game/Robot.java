@@ -1,23 +1,27 @@
 package game;
 
+import processing.core.PApplet;
 import processing.core.PImage;
 
 public class Robot extends Creature {
+	
+	private PApplet parent;
 	
 	private int compost;
 	private int recyling;
 	
 	private boolean moving;
 	
-	private float timer;
+	private float changeTime;
+	
 	private int animationIndex;
 	
 	private PImage[] sprites;
 	
 	//test
-	public Robot(float x, float y ) 
+	public Robot(PApplet parent,float x, float y ) 
 	{
-		super(x, y,100);
+		super(parent,x, y,100);
 		moving = false;
 		compost = 0; 
 		recyling = 0;
@@ -45,8 +49,18 @@ public class Robot extends Creature {
 	public void draw(float imageX, float imageY) {
 		
 		if(moving) {
+			if(changeTime <= parent.millis()) {
+				animationIndex++;
+				changeTime = parent.millis() + 2000;
+			}
+			
+			if(animationIndex >= sprites.length)
+				animationIndex = 0;
+			
 			
 		}
+		
+		parent.image(sprites[animationIndex], x, y);
 		// TODO Auto-generated method stub
 		
 	}
