@@ -18,7 +18,7 @@ public class Laser extends Entity{
 		super(parent, x, y, 100000, world);
 		distX = parent.mouseX - x;
 		distY = parent.mouseY - y;
-		laserImage = new PImage();
+		laserImage = new PImage();//hjk
 		parent.loadImage("art/laser.png");
 	}
 	
