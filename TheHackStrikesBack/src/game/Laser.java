@@ -1,10 +1,11 @@
 package game;
 
-public class Laser {
+public class Laser extends Entity{
 	
 	private float toX, toY;
 	
-	public Laser(float toX, float toY) {
+	public Laser(PApplet parent, float toX, float toY) {
+		super(parent, )
 		this.toX = toX;
 		this.toY = toY;
 	}
