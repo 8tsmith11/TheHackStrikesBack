@@ -134,7 +134,9 @@ public class World
 	}
 
 	public void clicked() {
-		if(player.getCompost() > 0 ) {
+		
+		
+	
 
 			for(int i = 0 ; i < entities.size(); i++) {
 
@@ -149,7 +151,7 @@ public class World
 
 					if(p.dist(imageX,imageY,p.mouseX,p.mouseY ) < 30) {
 
-						if(entities.get(i) instanceof Plant) {
+						if(entities.get(i) instanceof Plant && player.getCompost() > 0) {
 							((Plant) entities.get(i)).upgrade();
 							player.useCompost();
 						}
@@ -181,7 +183,16 @@ public class World
 				}
 
 			}
-		}
+			
+			if(seeds > 0) {
+
+				entities.add(new Plant(p, getPlayerX(), getPlayerY(), 1, this));
+				seeds--;
+			}
+	}
+	
+	public int getSeeds() {
+		return seeds;
 	}
 	
 

@@ -9,6 +9,8 @@ public class Plant extends Entity {
 	private PImage image;
 	private World world;
 	private PApplet parent;
+	
+	private float seedTimer;
 
 	public Plant(PApplet parent, float x, float y, int health, World world) {
 		super(parent, x, y, health,world);
@@ -26,6 +28,11 @@ public class Plant extends Entity {
 			if (success < .001 * speed) {
 				cleanse();
 			}
+		}
+		
+		if(seedTimer <= parent.millis() && level == 3) {
+			world.addSeed();
+			seedTimer = parent.millis() + 5000;
 		}
 	}
 

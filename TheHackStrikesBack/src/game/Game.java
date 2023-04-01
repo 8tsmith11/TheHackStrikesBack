@@ -46,6 +46,7 @@ public class Game extends PApplet
 		
 		text("Compost: " + world.getRobot().getCompost(), 10, 15);
 		text("Plastic: " + world.getRobot().getPlastic(), 10, 30);
+		text("Seeds: " + world.getSeeds(), 10, 45);
 		
 	}
 	
