@@ -2,13 +2,16 @@ package game;
 
 import java.util.ArrayList;
 
+import processing.core.PApplet;
+
 public class World 
 {
 	private int[][] map;
 	private Robot player;
 	private ArrayList<Entity> entities;
+	private PApplet p;
 	
-	public World(int size)
+	public World(PApplet parent, int size)
 	{
 		map = new int[size][size];
 		for (int r = 0; r < map.length; r++)
@@ -20,7 +23,10 @@ public class World
 		}
 		
 		entities = new ArrayList<Entity>();
-		player = new Robot(size / 2, size / 2);
+		p = parent;
+		player = new Robot(p, size / 2, size / 2);
+		map[size / 2 + 1][size / 2] = 0;
+		entities.add(player);
 	}
 	
 	public Robot getRobot() {
@@ -54,5 +60,12 @@ public class World
 	public int getMapHeight()
 	{
 		return map.length;
+	}
+	
+	public Entity getEntity(int index) {
+		return entities.get(index);
+	}
+	public int getEntitiesLength() {
+		return entities.size();
 	}
 }
