@@ -32,6 +32,12 @@ public class WorldDrawer
 		deadWater = parent.loadImage("art/deadwater.png");
 	}
 	
+	public void drawWorld()
+	{
+		drawMap();
+		drawEntities();
+	}
+	
 	public void drawMap()
 	{
 		for (int x = 0; x <= width; x++)
@@ -54,6 +60,24 @@ public class WorldDrawer
 						p.image(deadGround, imageX, imageY);
 					}
 				}
+			}
+		}
+	}
+	
+	public void drawEntities()
+	{
+		for(int i = 0; i < world.getEntitiesLength(); i++)
+		{
+			float x = world.getEntity(i).getX();
+			float y = world.getEntity(i).getY();
+			
+			if(Math.abs(world.getPlayerX() - x) <= width / 2 + tileSize / 2 
+					&& Math.abs(world.getPlayerY() - y) <= height / 2 + tileSize / 2)
+			{
+				float imageX = (width / 2 - world.getPlayerX() + x) * tileSize;
+				float imageY = (height / 2 - world.getPlayerY() + y) * tileSize;
+				
+				world.getEntity(i).draw(imageX, imageY);
 			}
 		}
 	}
