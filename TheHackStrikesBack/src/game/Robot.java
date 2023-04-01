@@ -133,6 +133,8 @@ public class Robot extends Creature {
 	}
 	
 	public void useCompost() {compost--;}
+	
+	public void addCompost() {compost++;}
 
 	public int getCompost() {return compost;}
 	public int getPlastic() {return plastic;}
