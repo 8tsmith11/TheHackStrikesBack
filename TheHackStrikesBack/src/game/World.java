@@ -5,7 +5,10 @@ import java.util.ArrayList;
 public class World 
 {
 	private int[][] map;
+	private Robot player;
 	private ArrayList<Entity> entities;
+	private int worldWidth;
+	private int worldHeight;
 	
 	public World(int size)
 	{
@@ -19,5 +22,30 @@ public class World
 		}
 		
 		entities = new ArrayList<Entity>();
+	}
+	
+	public int getTile(int x, int y)
+	{
+		return map[x][y];
+	}
+	
+	public double getPlayerX()
+	{
+		
+	}
+	
+	public double getPlayerY()
+	{
+		
+	}
+	
+	public int getMapWidth()
+	{
+		
+	}
+	
+	public int getMapHeight()
+	{
+		
 	}
 }
