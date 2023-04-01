@@ -2,9 +2,9 @@ package game;
 
 public abstract class Entity {
 	
-	protected float X;
+	protected float x;
 
-	protected float Y;
+	protected float y;
 	
 	private int health;
 	
@@ -17,11 +17,11 @@ public abstract class Entity {
 	}
 	
 	public float getX() {
-		return X;
+		return x;
 	}
 	
 	public float getY() {
-		return Y;
+		return y;
 	}
 
 
