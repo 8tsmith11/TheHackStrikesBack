@@ -6,7 +6,7 @@ public class World
 {
 	private int[][] map;
 	private Robot player;
-	private ArrayList<Entity> entities;;
+	private ArrayList<Entity> entities;
 	
 	public World(int size)
 	{
@@ -46,5 +46,14 @@ public class World
 	public int getMapHeight()
 	{
 		return map.length;
+	}
+	
+	public int getEntitiesLength()
+	{
+		return entities.length;
+	}
+	public Entity getEntity(int index)
+	{
+		return entities.get(index);
 	}
 }

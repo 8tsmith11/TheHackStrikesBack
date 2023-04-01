@@ -26,7 +26,7 @@ public class Game extends PApplet
 	
 	public void draw()
 	{
-		wd.drawMap();
+		wd.drawWorld();
 	}
 	
 	

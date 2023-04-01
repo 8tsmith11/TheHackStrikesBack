@@ -14,6 +14,8 @@ public abstract class Entity {
 		this.y = y;
 	}
 	
+	public abstract void draw(float imageX, float imageY);
+	
 	public abstract void behavior();
 	
 	public void ChangeHealth(int change) {
