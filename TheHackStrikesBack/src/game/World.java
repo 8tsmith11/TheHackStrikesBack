@@ -19,19 +19,16 @@ public class World
 			for (int c = 0; c < map.length; c++)
 			{
 				map[r][c] = -1;
-				if(Math.random() < 0.001) {
-					map[r][c] = -2;
-				}
-				else {
-					if(Math.random() < 0.03) {
-						map[r][c] = -3;
-					}
+				if(Math.random() < 0.03) {
+					map[r][c] = -3;
 				}
 			}
 		}
+		
 		for(int r = 0; r < map.length; r++) {
 			for(int c = 0; c < map.length; c++) {
-				if(map[r][c] == -2) {
+				if(Math.random() < 0.0001) 
+				{
 					formLake(c,r);
 				}
 			}
