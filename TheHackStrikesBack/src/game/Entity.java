@@ -10,17 +10,17 @@ public abstract class Entity {
 	
 	private int health;
 	
-	protected int WorldSize;
+	protected static World world;
 	
 	
 	
-	public Entity(PApplet parent, float x, float y, int health, int worldSize)
+	public Entity(PApplet parent, float x, float y, int health, World world)
 	{
 		this.x = x;
 		this.y = y;
 		
 		this.health = health;
-		this.worldSize = worldSize;
+		this.world = world;
 	}
 	
 	public abstract void draw(float imageX, float imageY);

@@ -10,9 +10,9 @@ public abstract class Creature extends Entity {
 	
 	private PApplet parent;
 	
-	public Creature(PApplet parent, float x, float y, int health, int WorldSize) 
+	public Creature(PApplet parent, float x, float y, int health, World world) 
 	{
-		super(parent,x, y, health,WorldSize);
+		super(parent,x, y, health,world);
 		speed = .1f;
 	}//jldsjkdsjkallasdfhjkfdkshjahdfkjfdkahjhkjfdaskadsadsdfdfdfsjkladsadsdasads
 	

@@ -11,7 +11,7 @@ public class Plant extends Entity {
 	private PApplet parent;
 
 	public Plant(PApplet parent, float x, float y, int health, World world) {
-		super(parent, x, y, health);
+		super(parent, x, y, health,world);
 		this.parent = parent;
 		upgrade();
 
