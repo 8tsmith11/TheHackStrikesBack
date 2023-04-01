@@ -67,7 +67,7 @@ public class WorldDrawer
 					}
 					else if (t == -2)
 					{
-						p.image(deadWater, imageX, imageY)
+						p.image(deadWater, imageX, imageY);
 					}
 				}
 			}
