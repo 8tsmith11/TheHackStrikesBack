@@ -23,6 +23,9 @@ public class WorldDrawer
 		p = parent;
 		this.world = world;
 		
-		
+		ground = parent.loadImage("images/ground.png");
+		deadGround = parent.loadImage("images/deadground.png");
+		water = parent.loadImage("images/water.png");
+		deadWater = parent.loadImage("images/deadwater.png");
 	}
 }

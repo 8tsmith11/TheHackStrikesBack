@@ -5,7 +5,10 @@ import java.util.ArrayList;
 public class World 
 {
 	private int[][] map;
+	private Robot player;
 	private ArrayList<Entity> entities;
+	private int worldWidth;
+	private int worldHeight;
 	
 	public World(int size)
 	{
