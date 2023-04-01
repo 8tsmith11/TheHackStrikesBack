@@ -44,6 +44,8 @@ public class WorldDrawer
 					
 					float imageX = x * tileSize - offsetX;
 					float imageY = y * tileSize - offsetY;
+					System.out.println(imageX);
+					System.
 							
 					int t = world.getTile(tileX, tileY);
 					if (t == -1)
