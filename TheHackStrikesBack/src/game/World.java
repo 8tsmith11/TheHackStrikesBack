@@ -64,7 +64,7 @@ public class World
 			int randX = (int) (Math.random() * map[0].length);
 			int randY = (int) (Math.random() * map.length);
 
-			if (map[randX][randY] < 0)
+			if (map[randX][randY] < 0.01)
 			{
 				entities.add(new Monster(p, randX, randY, 100, this));
 			}
@@ -154,9 +154,10 @@ public class World
 						if(entities.get(i) instanceof Plant && player.getCompost() > 0) {
 							((Plant) entities.get(i)).upgrade();
 							player.useCompost();
+							return;
 						}
 						
-						else {
+						else if(entities.get(i) instanceof Monster){
 
 							System.out.println(p.dist(imageX,imageY,p.mouseX,p.mouseY ));
 							
@@ -174,6 +175,7 @@ public class World
 								player.addCompost();
 								entities.remove(i);
 								i--;
+								
 							}
 							
 							}
