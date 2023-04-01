@@ -30,10 +30,9 @@ public class Robot extends Creature {
 
 		moving = false;
 		compost = 0; 
-<<<<<<< HEAD
-=======
+
 		plastic = 0;
->>>>>>> branch 'master' of git@github.com:8tsmith11/TheHackStrikesBack.git
+
 		animationIndex = 0;
 
 		sprites = new PImage[3];
