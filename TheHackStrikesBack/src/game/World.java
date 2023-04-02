@@ -29,7 +29,7 @@ public class World
 
 		for(int r = 0; r < map.length; r++) {
 			for(int c = 0; c < map.length; c++) {
-				if(Math.random() < 0.0005) 
+				if(Math.random() < 0.001) 
 				{
 					formLake(c,r);
 				}
