@@ -18,19 +18,26 @@ public abstract class Creature extends Entity {
 	}//jldsjkdsjkallasdfhjkfdkshjahdfkjfdkahjhkjfdaskadsadsdfdfdfsjkladsadsdasads
 
 	public void moveX(float displacement) {
+		
+
 
 		int xCheck = 0;
 
 		if(direction.equals("right")) {
+			if(x>= world.getMapWidth() -1 )
+				return;
 			xCheck += 1;
 		}
 
 		if(direction.equals("left")) {
+			if(x<= 0)
+				return;
+			
 			if(x != 0)
 				xCheck -= 1;
 		}
 
-		if(world.getMap()[(int) (xCheck + x)][(int) y] == 1 || world.getMap()[ (int) (xCheck + x)][(int) y] == -1)
+		if((world.getMap()[(int) (xCheck + x)][(int) y] == 1 || world.getMap()[ (int) (xCheck + x)][(int) y] == -1))
 			x += displacement * speed;
 	}
 	public void moveY(float displacement) {
@@ -38,10 +45,17 @@ public abstract class Creature extends Entity {
 		int yCheck = 0;
 
 		if(direction.equals("up")) {
+			
+			if(y <= 0)
+				return;
+			
 			if(y != 0)
 				yCheck -= 1;
 		}
 		if(direction.equals("down")) {
+			
+			if(y>= world.getMapHeight() -1 )
+				return;
 
 			yCheck += 1;
 		}
